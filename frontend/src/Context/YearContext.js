@@ -13,7 +13,7 @@ function JobContextProvider(props)
     },[]);
  
     const fetcher= async ()=>{
-     const responce= await axios.get("http://localhost:300/list/job");
+     const responce= await axios.get("https://floqler-assignment.onrender.com/list/job");
      console.log(responce.data.responce);
       if(responce.data.sucess)
       {

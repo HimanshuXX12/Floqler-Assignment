@@ -11,7 +11,7 @@ function Dialoge(props) {
     },[props.value]);
 
      const  ParticularRow= async  ()=>{
-          const responce= await axios.post(`http://localhost:300/job/${props.value.work_year}`);
+          const responce= await axios.post(`https://floqler-assignment.onrender.com/job/${props.value.work_year}`);
           console.log("Actual data",responce);
           setRowActualData(responce.data.responce);
      }

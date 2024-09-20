@@ -34,7 +34,7 @@ function Home() {
    
   return (
     <div className='home_page'>
-        <div className='flex items-center justify-between m-4  font-bold custom_home'>
+        <div className='flex items-center justify-between mb-4  font-bold custom_home'>
            <h1 className='found'>Found {Fetched_Data.length} Year Data</h1>
              <div className='flex items-center gap-4 px-4'>
                     <div className='found'>Sort By</div>

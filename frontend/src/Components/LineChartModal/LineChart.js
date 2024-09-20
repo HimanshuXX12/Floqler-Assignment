@@ -1,35 +1,16 @@
 import React from 'react'
 import './LineChart.css'
-import { Line } from 'react-chartjs-2';
+import { Line ,Bar} from 'react-chartjs-2';
 import {
   Chart as ChartJS,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Title,
-  Tooltip,
-  Legend
-} from 'chart.js';
+} from 'chart.js/auto';
 
-ChartJS.register(
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Title,
-  Tooltip,
-  Legend
-);
+
 
 function LineChart(props) {
   console.log("Line Props",props.Table_Data);
      const chartdata={
          labels:props.Table_Data.map((item)=>item.work_year),
-         running:function()
-         {
-            console.log(this.label);
-         },
          datasets:[
            {
               label:"No of Jobs",
@@ -42,16 +23,15 @@ function LineChart(props) {
            }
          ]
      }
-
-     chartdata.running();
-
+      
+     
      const options = {
           responsive: true,
           scales: {
                   x: {
                       title: {
                           display: true,
-                          text: 'Years', // Label for X-axis
+                          text: 'Years',
                       },
                       ticks:{
                         autoSkip: false,
@@ -71,21 +51,28 @@ function LineChart(props) {
                   display: true,
                   position: 'top',
               },
+              title:{
+                display:true,
+                text:"Line Grapgh"
+
+              }
           },
   };
 
   return (
     <div>
-                  <dialog id="my_lineGrapgh" className="modal">
-          <div className="modal-box  w-full ">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-            </form>
-            <div className='flex justify-center '>
-                <Line data={chartdata} options={options} className='lineer'/>
-            </div>
-          </div>
+        <dialog id="my_lineGrapgh" className="modal">
+                  <div className="modal-box  w-full ">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <div className='flex justify-center '>
+                        <Line data={chartdata} options={options} className='lineer'/>
+                        {/* <Bar data={dummychartdata} /> */}
+                    </div>
+                  </div>
+
         </dialog>
       
     </div>

@@ -1,20 +1,24 @@
 import React from 'react'
 import './LineChart.css'
 import { Line ,Bar} from 'react-chartjs-2';
+import Aggregate from '../../DataAgrregate';
 import {
   Chart as ChartJS,
 } from 'chart.js/auto';
 
 
 
+
 function LineChart(props) {
-  console.log("Line Props",props.Table_Data);
+  console.log("Aggregate",Aggregate);
      const chartdata={
-         labels:props.Table_Data.map((item)=>item.work_year),
+        //  labels:props.Table_Data.map((item)=>item.work_year),
+         labels:Aggregate.map((item)=>item.work_year),
          datasets:[
            {
               label:"No of Jobs",
-              data:props.Table_Data?.map((item)=>item.total_jobs),
+              // data:props.Table_Data?.map((item)=>item.total_jobs),
+              data:Aggregate?.map((item)=>item.total_jobs),
               fill: false, 
               borderColor: 'rgba(75,192,192,1)', 
               backgroundColor: 'rgba(75,192,192,0.2)', 

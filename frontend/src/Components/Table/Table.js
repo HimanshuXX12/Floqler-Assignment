@@ -1,9 +1,11 @@
 import React, { useEffect, useState,useContext } from 'react'
 import { JobContent } from '../../Context/YearContext';
+// import Aggregator from '../../DataAgrregate';
 import axios from 'axios';
 import Dialoge from '../Dialoge/Dialoge';
 import './Table.css'
 import LineChart from '../LineChartModal/LineChart';
+
 function Table() {
      const [row_Data,setRowdata]= useState([]);
     const {Fetched_Data,setFetchedData}= useContext(JobContent);
@@ -12,6 +14,7 @@ function Table() {
     },[]);
    
      const clicker= (row_data)=>{
+          console.log("Row Data",row_Data);
                setRowdata(row_data);
                console.log("Row data",row_data);
       document.getElementById('my_modal_3').showModal();

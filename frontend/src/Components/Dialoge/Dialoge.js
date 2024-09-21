@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+
 import './Dialoge.css'
 
 function Dialoge(props) {
@@ -13,7 +14,7 @@ function Dialoge(props) {
      const  ParticularRow= async  ()=>{
           const responce= await axios.post(`https://floqler-assignment.onrender.com/job/${props.value.work_year}`);
           console.log("Actual data",responce);
-          setRowActualData(responce.data.responce);
+          setRowActualData(responce.data.responce); 
      }
 
   return (
